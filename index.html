@@ -252,22 +252,43 @@
             100% { clip: rect(10px, 9999px, 50px, 0); }
         }
 
-        .ad-space {
-            background: #000;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--neon-pink);
-            border: 3px inset #fff;
-            margin-top: 20px;
+        /* WORKING FLASHING ADS */
+        .ad-container {
+            margin: 15px 0;
             text-align: center;
-            font-weight: bold;
-            animation: blink 0.5s step-end infinite;
         }
 
-        @keyframes blink { 
-            50% { border-color: var(--neon-blue); color: var(--neon-blue); } 
+        .flashing-ad {
+            display: block;
+            border: 3px solid #000;
+            background: #ff0;
+            color: red;
+            font-weight: 900;
+            text-decoration: none;
+            padding: 10px;
+            animation: ad-flash 0.2s infinite;
+            box-shadow: 4px 4px 0 #000;
+            margin-bottom: 10px;
+        }
+
+        @keyframes ad-flash {
+            0% { background: #ff0; color: #f0f; }
+            50% { background: #0ff; color: #000; }
+            100% { background: #f0f; color: #ff0; }
+        }
+
+        .david-head {
+            width: 100%;
+            max-width: 200px;
+            filter: hue-rotate(280deg) saturate(1.5);
+            display: block;
+            margin: 10px auto;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
         }
 
         footer {
@@ -337,6 +358,14 @@
                     <br><br>
                     <span style="background: white; color: black; padding: 2px 8px;"><b>switch to linux</b> tHAnks</span>
                 </p>
+                
+                <!-- NEW FLASHING BANNER AD -->
+                <div class="ad-container">
+                    <a href="https://www.google.com/search?q=vaporwave+music" target="_blank" class="flashing-ad">
+                        !!! YOU ARE THE 999,999th VISITOR !!! <br> CLICK HERE TO CLAIM YOUR FREE DIGITAL SOUL
+                    </a>
+                </div>
+
                 <p style="border-top: 1px solid var(--neon-blue); padding-top: 15px;">
                     Status: <span style="color: #0f0; text-shadow: 0 0 10px #0f0;">[ ONLINE ]</span><br>
                     Uptime: <span id="clock">00:00:00</span>
@@ -346,6 +375,9 @@
         </section>
 
         <aside class="sidebar">
+            <!-- THE DAVID HEAD -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Michelangelo%27s_David_-_worn_out_look.png" class="david-head" alt="My email is 123@gmail.com I PROMISE I WILL RESPOND!!!">
+            
             <h3 style="margin-top: 0; border-bottom: 2px solid #000;">Site Stats</h3>
             <ul style="list-style-type: square; padding-left: 20px; font-weight: bold;">
                 <li>Hits: HopeFully ALot SoOn :)</li>
@@ -353,10 +385,18 @@
                 <li>Browser: i dont know hopefully librewolf or mullvad If YoUr OwN ChRome SwiTch Now</li>
             </ul>
             <hr style="border: 1px inset #fff;">
-            <p class="glitch">2026 The Year Of AI</p>
-            <div class="ad-space">
-                [AD SPACE]<br>Im JokIng Im NOt scUm or Am i?
+            
+            <!-- WORKING SIDEBAR ADS -->
+            <div class="ad-container">
+                <a href="https://archive.org" target="_blank" class="flashing-ad" style="font-size: 0.8rem; animation-duration: 0.5s;">
+                    DOWNLOAD RAM.EXE
+                </a>
+                <a href="https://www.altavista.com" target="_blank" class="flashing-ad" style="background: #0f0; animation-duration: 0.3s; font-size: 0.7rem;">
+                    HOT SINGLES IN YOUR LOCAL IP RANGE
+                </a>
             </div>
+
+            <p class="glitch">2026 The Year Of AI</p>
             <div style="text-align:center; margin-top:20px;">
                 <img src="https://web.archive.org/web/20090831190204im_/http://geocities.com/SiliconValley/6731/construct.gif" width="100" alt="Welcome to my website have you ever hated the new corpo internet covered in red tape? Well if you do um cool i guess but if you dont welcome to my cool website made by me with passion. My name is blav and i belive in the oLd InTerNeT and And for all the OthEr people who have the same belives that the old InTerNet will be reviVed I love yOu very mucH. :)">
             </div>
@@ -365,8 +405,6 @@
 
     <footer>
         <p>&copy; 2026 ReiMaginend in 1998 CoPy No rightS reserved Let the weB be OpeN :) Best viewed in 800x600.</p>
-        <img src="https://web.archive.org/web/20091023120101im_/http://geocities.com/Heartland/Plains/6936/images/ie_logo.gif" alt="IE Logo">
-        <img src="https://web.archive.org/web/20090830050519im_/http://geocities.com/SiliconValley/Way/4122/netscape.gif" alt="Netscape Logo">
         <div style="font-size: 10px; margin-top: 20px; color: var(--neon-pink);">Powered by Me and Me Only your WeLCome</div>
     </footer>
 
